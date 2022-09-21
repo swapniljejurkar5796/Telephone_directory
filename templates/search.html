@@ -1,0 +1,28 @@
+{% extends 'index.html'  %}
+
+
+{% block container %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+
+
+<center>
+<form action="{{ url_for('search') }}" method="post"><br><br>
+  <h2 style="font-family:Times New Roman; color:yellow; font-size: 25px;"><strong>SEARCH CONTACT</strong></h2><input type="text" name="se" placeholder ="              Enter valid Name       " text-align: center maxlength="10" size="30" required><br><br>
+  <input type="submit" value="submit" position:center;>
+</form>
+{% for i,j in database.items() %}
+  {% if search==i %}
+        <h1 style="font-family:Times New Roman; color:  cyan; font-size: 50px;display: table;margin: 5px auto 5px auto;padding: 5px;font-size: 50px;background-color: cyan;color:black;">Name : {{search}}</h1>
+        <h1 style="font-family:Times New Roman; color: cyan; font-size: 50px;display: table;margin: 5px auto 5px auto;padding: 5px;font-size: 50px;background-color: cyan;color:black;">Number : {{j}}</h1><br>
+        <h2 style="font-family:Times New Roman; color: white; font-size: 50px;display: table;margin: 5px auto 5px auto;padding: 5px;font-size: 50px;background-color: cyan;color:black;"><strong>Welcome {{ search }}</strong> </h2>
+
+  {% endif %}
+
+{% endfor %}
+</center>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+{% extends 'index.html'  %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+{% block container %}<br>
+<body>
+<div>
+<center>
+<br><br><br><h2 style="font-family:Times New Roman; color:yellow; font-size: 30px; "> ADD CONTACT HERE </h2>
+  <form action="{{ url_for('home') }}" method="post" >
+  <h4 style="font-family:Times New Roman; color:cyan; font-size: 20px;font-weight:1000"> Name</h4> <input type="text" name="Name" placeholder="       Enter valid Name    "  required><br><br>
+  <h4 style="font-family:Times New Roman; color:cyan; font-size: 20px;font-weight:1000">Contact No </h4>  <input type="number" name="phone" placeholder="             Enter No           " min = 10  style="width: 200px" required><br><br>
+  <input type="submit" value="ADD" onclick="alert('New Contact Added Successfully !!!')">
+
+</center>
+</div>
+</body>
+{% endblock %}
